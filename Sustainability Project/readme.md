@@ -44,5 +44,15 @@ This analysis is built entirely using the Python data analysis stack, ensuring r
 
 -----
 
+## 📊 Sustainability Dashboard
+
+We believe in transparency and tracking our progress\! You can view the live data and key performance indicators (KPIs) related to the sustainability aspects of this project on our dedicated dashboard.
+
+### **View the Dashboard on Streamlit**
+
+Click the link below to access the interactive dashboard:
+
+  * **[Go to the Live Sustainability Dashboard]()**
+
 Enjoy exploring the data\! If you have any questions or suggestions, please feel free to reach out. Happy analyzing\! 💡
 
