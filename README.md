@@ -47,11 +47,7 @@ To explore and run the analysis or scripts in this repository, you'll need **Pyt
     Navigate into the folder of the specific project you want to explore .
 
 3.  **Install Required Libraries** 📦
-    Install all the necessary Python libraries (like Pandas, Scikit-learn, etc.).
-     using `pip`:
-    ```bash
-    pip install -r requirements.txt
-    ```
+    Install all the necessary Python libraries (like Pandas, Seaborn, etc.).
 
 5.  **Run the Analysis** ▶️
     Once the libraries are installed, you can open and run the primary file:
@@ -65,6 +61,6 @@ I am actively seeking opportunities to apply my programming, data analysis, and 
 
 * **Portfolio**: [https://portfolio-dina.lovable.app/]
 * **Email**: [dinaelharedy00@gmail.com]
-* **Linkedin**: [https://bit.ly/4hDJguP]
+* **Linkedin**: [https://www.linkedin.com/in/dina-ali-0573a724b/]
   
 Thank you for your review. I welcome any questions or constructive feedback on the projects presented here!
