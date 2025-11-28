@@ -266,54 +266,39 @@ def apply_custom_css():
         box-shadow: none !important;
     }
     
-    /* Logo container styling */
+    /* Extremely small logo styling - FORCE SMALL SIZE */
+    .stImage img {
+        max-width: 25px !important;
+        max-height: 20px !important;
+        width: 25px !important;
+        height: 20px !important;
+        object-fit: contain !important;
+    }
+    
+    /* Logo container constraints */
     .logo-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.5rem;
+        max-width: 25px !important;
+        max-height: 20px !important;
     }
     
-    .logo {
-        max-height: 20px;
-        max-width: 30px;
-        object-fit: contain;
-    }
-    
-    .logo-left {
-        margin-right: auto;
-    }
-    
-    .logo-right {
-        margin-left: auto;
-    }
-    
-    /* Consistent logo sizing */
-    .logo-image {
-        max-height: 20px;
-        max-width: 30px;
-        object-fit: contain;
-        border-radius: 6px;
-    }
-    
-    /* Logo placeholder styling */
+    /* Small logo placeholder */
     .logo-placeholder {
-        width: 30px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 6px;
-        color: white;
-        font-weight: bold;
-        font-size: 0.7rem;
-        text-align: center;
-        line-height: 1.1;
+        width: 25px !important;
+        height: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 3px !important;
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 0.5rem !important;
+        line-height: 1 !important;
     }
     
-    /* Adjust header spacing for smaller logos */
-    .logo-header-row {
-        margin-bottom: 0.5rem !important;
+    /* Force small image containers */
+    [data-testid="column"] img {
+        max-width: 25px !important;
+        max-height: 20px !important;
     }
     
     </style>
@@ -668,29 +653,28 @@ def plot_market_trend(df_trend_avg):
 # 2. LOGO HANDLING FUNCTIONS
 # ====================================================================
 
-def load_logo(image_path, default_width=30):
+def load_logo(image_path, default_width=25):
     """Load logo with consistent sizing and error handling"""
     try:
         if os.path.exists(image_path):
             logo = Image.open(image_path)
             return logo
         else:
-            st.warning(f"Logo not found: {image_path}")
             return None
-    except Exception as e:
-        st.warning(f"Error loading logo {image_path}: {e}")
+    except Exception:
         return None
 
-def display_logo_column(logo, position, width=30):
+def display_logo_column(logo, position, width=25):
     """Display logo in a column with consistent sizing"""
     if logo:
-        st.image(logo, width=width, use_column_width=False)
+        # Force small display with tight constraints
+        st.image(logo, width=width, use_column_width=False, output_format='PNG')
     else:
         # Fallback placeholder with consistent sizing
         placeholder_color = "#1B5E20" if position == "left" else "#2E7D32"
         st.markdown(f"""
         <div class="logo-placeholder" style="background: {placeholder_color};">
-            {position.upper()}<br>LOGO
+            {position[0]}
         </div>
         """, unsafe_allow_html=True)
 
@@ -705,22 +689,22 @@ def main():
     if df.empty:
         return
 
-    # --- VERY SMALL LOGOS AT THE TOP WITH CONSISTENT SIZING ---
+    # --- EXTREMELY SMALL LOGOS AT THE TOP ---
     col1, col2, col3 = st.columns([1, 2, 1])
     
-    # Load logos with very small size
+    # Load logos with extremely small size
     left_logo = load_logo('Sustainability-Python/logo_ministry.png')
     right_logo = load_logo('Sustainability-Python/logo_project.png')
     
     with col1:
-        display_logo_column(left_logo, "left", width=30)
+        display_logo_column(left_logo, "left", width=25)
     
     with col2:
         # Center content - main title will go here
         pass
     
     with col3:
-        display_logo_column(right_logo, "right", width=30)
+        display_logo_column(right_logo, "right", width=25)
 
     # --- Enhanced Header with Consistent Background ---
     st.markdown("""
@@ -1098,8 +1082,8 @@ def main():
                 <p style="margin: 5px 0 0 0; color: #E8F5E8; font-size: 0.9rem;">Driving Sustainable Business Decisions</p>
             </div>
             <div style="text-align: right;">
-                <p style="margin: 0; color: #E8F5E8; font-size: 0.9rem;">📅 Developed in : 2025</p>
-                <p style="margin: 5px 0 0 0; color: #E8F5E8; font-size: 0.9rem;">📊 Designed by Dina Ali</p>
+                <p style="margin: 0; color: #E8F5E8; font-size: 0.9rem;">📅 Last Updated: 2024</p>
+                <p style="margin: 5px 0 0 0; color: #E8F5E8; font-size: 0.9rem;">📊 Powered by Streamlit</p>
             </div>
         </div>
     </div>
@@ -1108,5 +1092,3 @@ def main():
 # Run the main function
 if __name__ == "__main__":
     main()
-
-
