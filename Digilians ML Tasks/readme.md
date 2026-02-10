@@ -95,7 +95,7 @@ This approach ensures accuracy, clarity, and reproducibility.
 
 ## 🧑‍🎓 About the Program
 
-**Digilians – IntAIVE** is an educational initiative aimed at developing **AI, Data Science, and Machine Learning skills**, supervised by the **Ministry of Communication and Information Technology (MCIT)**, preparing participants for real-world technical challenges.
+**Digilians – Initiative** is an educational initiative aimed at developing **AI, Data Science, and Machine Learning skills**, supervised by the **Ministry of Communication and Information Technology (MCIT)** and the **Egyptian Military Academy**, preparing participants for real-world technical challenges.
 
 ---
 
@@ -114,7 +114,7 @@ This approach ensures accuracy, clarity, and reproducibility.
 
 ## 📬 Contact
 
-For questions, feedback, or collaboration opportunities, please feel free to reach out to** GitHub or LinkedIn**.
+For questions, feedback, or collaboration opportunities, please feel free to reach out to**GitHub or LinkedIn**.
 
 ---
 
