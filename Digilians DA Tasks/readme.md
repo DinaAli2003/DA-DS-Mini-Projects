@@ -1,6 +1,6 @@
 # 📊 Data Analysis Tasks
 
-## Digilians – Initiative
+## Digilians Initiative
 
 ### Under the Supervision of the Ministry of Communication and Information Technology (MCIT)
 
@@ -98,7 +98,7 @@ This ensures **accuracy, clarity, and reproducibility**.
 
 ## 🧑‍🎓 About the Initiative
 
-**Digilians – IntAIVE Initiative** is a national program designed to build competencies in **Data Analysis, Data Science, and Artificial Intelligence**, supervised by the **Ministry of Communication and Information Technology (MCIT)**.
+**Digilians Initiative** is a national program designed to build competencies in **Data Analysis, Data Science, and Artificial Intelligence**, supervised by the **Ministry of Communication and Information Technology (MCIT)**.
 
 The initiative aims to prepare participants for **real-world data challenges and industry applications**.
 
