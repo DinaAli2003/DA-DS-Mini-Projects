@@ -1,17 +1,6 @@
 # 📊 COVID-19 GLOBAL PANDEMIC ANALYSIS PROJECT
 
 
----
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8+-blue.svg">
-  <img src="https://img.shields.io/badge/Status-Completed-success.svg">
-  <img src="https://img.shields.io/badge/Last%20Updated-March%202026-brightgreen.svg">
-  <img src="https://img.shields.io/badge/LinkedIn-Project-blue?logo=linkedin">
-</p>
-
----
-
 ## 📋 PROJECT OVERVIEW
 
 This comprehensive **data analytics project** conducts an end-to-end exploratory data analysis of the **Global COVID-19 Pandemic Dataset**, covering **195+ countries** across **6 continents**. The project demonstrates the complete data science workflow—from raw data cleaning to advanced visualizations and data-driven policy recommendations.
@@ -189,8 +178,8 @@ This project includes **4 interactive Plotly visualizations**:
 │  ✓ Created 20+ static and 4+ interactive visualizations    │
 │  ✓ Identified 15 high-risk countries requiring intervention│
 │  ✓ Developed 24 actionable recommendations with timelines  │
-│  ✓ Estimated impact: 500,000+ lives saved annually        │
-│  ✓ Projected ROI: $5-7 saved per $1 invested              │
+│  ✓ Estimated impact: 500,000+ lives saved annually         │
+│  ✓ Projected ROI: $5-7 saved per $1 invested               │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -278,24 +267,6 @@ This project demonstrates competencies highly valued in **data analytics, busine
 - 💼 Analytics Consultant
 
 ---
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/yourprofile">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin">
-  </a>
-  <a href="mailto:your.email@example.com">
-    <img src="https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail">
-  </a>
-  <a href="https://github.com/yourusername">
-    <img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github">
-  </a>
-  <a href="YOUR_PORTFOLIO_URL">
-    <img src="https://img.shields.io/badge/Portfolio-View-brightgreen?style=for-the-badge&logo=web">
-  </a>
-</p>
-
----
-
 
 <p align="center">
   <i>"Data is the new public health infrastructure. This project demonstrates how analytics can save lives."</i>
