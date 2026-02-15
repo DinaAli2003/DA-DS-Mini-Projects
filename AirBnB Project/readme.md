@@ -269,17 +269,5 @@ jupyter notebook
 * Deploy an interactive dashboard (Streamlit / Power BI)
 * Implement clustering for market segmentation
 
----
-
-# 👩‍💻 Author
-
-**Dina Ali**
-Aspiring Data Analyst & Data Scientist
-
----
-
-# ⭐ If You Found This Useful
-
-Give this repository a ⭐ and feel free to connect with me!
 
 
