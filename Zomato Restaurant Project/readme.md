@@ -159,9 +159,4 @@ pip install pandas numpy matplotlib seaborn
 
 Special thanks to the **Digilians Initiative** team for providing the framework and mentorship necessary to execute this project successfully.
 
----
 
-*Developed with passion for data and excellence.*
-
-
-*Developed with passion for data and excellence.*
