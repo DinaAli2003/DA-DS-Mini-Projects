@@ -1,10 +1,6 @@
 # Airbnb NYC Listings Analysis
 ### A Comprehensive Data Analysis Project
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Pandas](https://img.shields.io/badge/Pandas-2.0-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-
 ---
 
 ## 📋 Project Overview
