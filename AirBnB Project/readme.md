@@ -177,8 +177,6 @@ print(f"Features: {df.columns.tolist()}")
 
 ---
 
----
-
 ## 📚 References
 
 - Airbnb Open Data: [Kaggle Dataset](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)
@@ -199,6 +197,5 @@ For questions, collaborations, or feedback:
 
 **© 2026 Digilians Initiative | Ministry of Communication and Information Technology | Egyptian Military Academy**
 
----
 
 *This project represents a significant milestone in the Digilians training program, demonstrating proficiency in data analysis, visualization, and deriving actionable insights from complex datasets.*
