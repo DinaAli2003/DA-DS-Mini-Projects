@@ -1,5 +1,5 @@
-# 🎓 Student Success Analytics:
-## Decoding Academic Performance
+# 🎓 Student Success Analytics
+### Decoding Academic Performance
 
 Welcome to the **Student Success Analytics** project! This repository contains a deep-dive exploration into what truly drives academic achievement in modern education.
 
