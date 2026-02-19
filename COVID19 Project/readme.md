@@ -49,6 +49,6 @@ The project concludes with actionable insights derived from the data:
 
 ---
 
-*Developed by: [Dina Ali]*
+*Developed by: Dina Ali*
 
 *Supervised by:Digilians Initiative- Ministry of Communication and Information Technology (MCIT) & The Egyptian Military Academy*
