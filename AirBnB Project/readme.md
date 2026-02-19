@@ -1,4 +1,4 @@
-#🏠 Airbnb NYC Listings Analysis
+# 🏠 Airbnb NYC Listings Analysis
 ### A Comprehensive Data Analysis Project
 
 ---
