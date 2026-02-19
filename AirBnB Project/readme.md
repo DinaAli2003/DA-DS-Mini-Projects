@@ -197,7 +197,7 @@ print(f"Features: {df.columns.tolist()}")
 For questions, collaborations, or feedback:
 
 - **Email**: dinaelharedy00@gmail.com
-- **LinkedIn**: [Your Profile](https://www.linkedin.com/in/dina-ali-0573a724b/)
+- **LinkedIn**: [My Profile](https://www.linkedin.com/in/dina-ali-0573a724b/)
 
 ---
 
