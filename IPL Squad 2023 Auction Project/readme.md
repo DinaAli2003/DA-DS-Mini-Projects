@@ -1,6 +1,6 @@
 # 🏏 IPL 2023 Auction Strategy & Analytics
 
-Welcome to the **IPL 2023 Auction Analytics** project! This repository contains a comprehensive data analysis workflow aimed at decoding the high-stakes world of the Indian Premier League (IPL) auctions. From price multipliers to retention strategies, this project dives deep into the numbers that build winning squads.
+Welcome to the **IPL 2023 Auction Analytics** project! This repository contains a comprehensive data science workflow aimed at decoding the high-stakes world of the Indian Premier League (IPL) auctions. From price multipliers to retention strategies, this project dives deep into the numbers that build winning squads.
 
 > 🎓 **Academic Context:** This project was proudly developed as a part of the **Digilians Initiative**, under the prestigious supervision of the **Ministry of Communications and Information Technology (MCIT)** and the **Egyptian Military Academy**.
 
@@ -38,6 +38,10 @@ The analysis follows a structured pipeline using **Python**, **Pandas**, and **S
 * Analysis of spending inequality across different franchises.
 
 ```
+
+
+
+
 
 ---
 
