@@ -1,4 +1,5 @@
-# 🎓 Student Success Analytics: Decoding Academic Performance
+# 🎓 Student Success Analytics:
+## Decoding Academic Performance
 
 Welcome to the **Student Success Analytics** project! This repository contains a deep-dive exploration into what truly drives academic achievement in modern education.
 
@@ -54,7 +55,3 @@ Based on the data, we propose a **Holistic Student Development Strategy**:
 ### 🏛️ Institutional Acknowledgment
 
 This project reflects the professional standards and analytical rigors instilled by the **Digilians Initiative**. We extend our gratitude to the **Ministry of Communications and Information Technology** and the **Egyptian Military Academy** for their visionary leadership and support.
-
----
-
-*Created with passion for data-driven education.*
