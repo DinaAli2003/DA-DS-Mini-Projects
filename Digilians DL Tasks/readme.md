@@ -1,4 +1,4 @@
-# 🧠 Deep Learning Projects – Digilians Initiative
+# 🧠 Deep Learning Tasks – Digilians Initiative
 
 ### Under the Supervision of the Ministry of Communications and Information Technology (MCIT)
 
