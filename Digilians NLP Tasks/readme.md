@@ -190,4 +190,8 @@ The initiative emphasizes **hands-on, project-based learning** to prepare partic
 
 ## 📬 Contact
 
+For questions, feedback, or collaboration opportunities, please feel free to reach out to **GitHub or LinkedIn**.
+
+---
+
 
