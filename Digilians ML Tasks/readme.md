@@ -114,7 +114,7 @@ This approach ensures accuracy, clarity, and reproducibility.
 
 ## 📬 Contact
 
-For questions, feedback, or collaboration opportunities, please feel free to reach out to**GitHub or LinkedIn**.
+For questions, feedback, or collaboration opportunities, please feel free to reach out to **GitHub or LinkedIn**.
 
 ---
 
