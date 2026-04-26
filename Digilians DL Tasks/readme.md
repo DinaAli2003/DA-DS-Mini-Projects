@@ -154,8 +154,6 @@ The program emphasizes **practical, project-based learning** to prepare particip
 
 ## 📬 Contact
 
-For collaboration, feedback, or opportunities:
-* 💼 LinkedIn: [https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact_info%3B%2ByVwdBawQG%2BO1pNRGfZ9yg%3D%3D]
-
+For questions, feedback, or collaboration opportunities, please feel free to reach out to **GitHub or LinkedIn**.
 
 
