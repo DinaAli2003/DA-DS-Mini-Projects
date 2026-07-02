@@ -1,0 +1,158 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -112,
+        -128
+      ],
+      "id": "47496920-936c-419e-ab2b-79bd5ef257f8",
+      "name": "When chat message received",
+      "webhookId": "a9fdcf4f-451e-4c38-a604-c5adf1816190"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        -128
+      ],
+      "id": "f3b2fe3a-b660-4f1b-9932-65cb9a81c6d6",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/mcp-registry.apify",
+      "typeVersion": 1,
+      "position": [
+        512,
+        176
+      ],
+      "id": "1b7573b2-4327-4afc-801e-810face8807b",
+      "name": "Apify MCP",
+      "credentials": {
+        "apifyMcpOAuth2Api": {
+          "id": "YNlnK2ksBafDZUR6",
+          "name": "Apify MCP OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "endpointUrl": "https://huggingface.co/mcp?login",
+        "authentication": "mcpOAuth2Api",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1.3,
+      "position": [
+        176,
+        192
+      ],
+      "id": "bbf069a1-81c9-45f9-98d4-47deb865075e",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpOAuth2Api": {
+          "id": "6kI2yC3byx8FfhFS",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -48,
+        144
+      ],
+      "id": "e643f974-66b8-453b-9334-8e080133a3b1",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ooWVEVZZhMP9DIkS",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify MCP": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "803bba36-6337-4902-a6a6-03b26182ad91",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7fed8ea76f25e26731f2bb5be5bc975caf92e397f5238ef1011fc9b253ee374d"
+  },
+  "nodeGroups": [],
+  "id": "14g52GDmApxmSOy8",
+  "tags": []
+}

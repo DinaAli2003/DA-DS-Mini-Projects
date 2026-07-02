@@ -1,0 +1,186 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3732dfb1-28f3-4800-9050-497c85cfaa9c",
+      "name": "When chat message received",
+      "webhookId": "547e6cb0-77f4-4caa-b650-39a757dbe9a7"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a weather information agent.\n\nYour task is to provide accurate weather information for a user-specified city by following these steps:\n\n1. Receive the city name from the user.\n2. Use the `get_weather` tool to retrieve the geographic coordinates of the city.\n3. Extract and store the returned:\n\n   * Latitude\n   * Longitude\n4. Use the retrieved latitude and longitude to request the current weather conditions.\n5. Return the weather information in a clear and structured format, including:\n\n   * City Name\n   * Latitude\n   * Longitude\n   * Temperature\n   * Weather Condition\n   * Humidity\n   * Wind Speed\n   * Any additional available weather details\n\n### Tool Usage\n\n```text\nget_weather(city_name)\n→ {\n    \"latitude\": <latitude>,\n    \"longitude\": <longitude>\n}\n```\n\n### Example\n\n**Input:**\n\n```text\nCairo\n```\n\n**Tool Call:**\n\n```text\nget_weather(\"Cairo\")\n```\n\n**Tool Response:**\n\n```json\n{\n  \"latitude\": 30.0444,\n  \"longitude\": 31.2357\n}\n```\n\n**Final Output:**\n\n```text\nCity: Cairo\nLatitude: 30.0444\nLongitude: 31.2357\nTemperature: 32°C\nCondition: Sunny\nHumidity: 45%\nWind Speed: 12 km/h\n```\n\n### Important Rules\n\n* Always call the `get_weather` tool before providing weather information.\n* Never guess coordinates or weather data.\n* If the city is not found, return a clear error message.\n* If multiple cities match the user's input, ask for clarification.\n* Ensure all weather information is based on the coordinates returned by the tool.\n* Present the final response in a concise, user-friendly format.\n\n---\nUse all possible tools to get weather\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "9d54d16d-5acf-41db-929e-60814f3b29c8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        64,
+        192
+      ],
+      "id": "86f3665b-d72b-4ae4-9078-77047496e518",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ooWVEVZZhMP9DIkS",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "This tool is used to get latitude and longitude using a city name \ninput: city(string)\noutput: latitude, longitude",
+        "url": "https://geocoding-api.open-meteo.com/v1/search?name=Berlin&count=10&language=en&format=json",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $fromAI('parameters0_Value', ``, 'string') }}"
+            },
+            {
+              "name": "count",
+              "value": "1"
+            },
+            {
+              "name": "language",
+              "value": "ar"
+            },
+            {
+              "name": "format",
+              "value": "json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        224,
+        224
+      ],
+      "id": "6bd1a2d8-a402-413f-a984-71168c32066f",
+      "name": "get_weather"
+    },
+    {
+      "parameters": {
+        "url": "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "latitude",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            },
+            {
+              "name": "=longitude",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters1_Value', ``, 'string') }}"
+            },
+            {
+              "name": "=hourly",
+              "value": "=temperature_2m"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        512,
+        208
+      ],
+      "id": "ebec0793-d432-4736-b17c-25b2c083f2b5",
+      "name": "get_weather1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_weather": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_weather1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "46edcfa4-08cd-4454-a929-9a27e246f55f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7fed8ea76f25e26731f2bb5be5bc975caf92e397f5238ef1011fc9b253ee374d"
+  },
+  "nodeGroups": [],
+  "id": "rCELTOOkoBEFJgsP",
+  "tags": []
+}

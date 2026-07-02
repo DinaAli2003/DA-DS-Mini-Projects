@@ -1,0 +1,270 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -144,
+        -48
+      ],
+      "id": "f7323b6a-736c-461e-91ae-d03d398c247d",
+      "name": "When chat message received",
+      "webhookId": "25d28113-7a76-4f6d-9cb5-4f2ae28a8cf9"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json$json.c$json.chatInputhatInput.chatInput }}{{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "• Q3 revenue up 12%\n• New enterprise clients: 15\n• Churn decreased to 3.2%\n• Launching v2.0 in October\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        80,
+        -48
+      ],
+      "id": "362aba10-e54c-4f9a-a21d-fb02c93e599d",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        80,
+        272
+      ],
+      "id": "4af8849c-34e5-48f0-8775-aa7ca0b1cb60",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "Convert the following business update into a structured executive report.\n\nUse these sections:\n- Executive Summary\n- Key Metrics\n- Risks\n- Next Steps\n\nExample:\nInput:\n\"Revenue increased by 8% and customer growth improved.\"\n\nOutput:\nExecutive Summary:\nThe company showed positive quarterly growth.\n\nKey Metrics:\n- Revenue growth: 8%\n- Customer growth increased\n\nRisks:\nMarket competition remains a challenge.\n\nNext Steps:\nContinue scaling customer acquisition.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        448,
+        -48
+      ],
+      "id": "35ecc126-65d6-4208-bab9-1e4014a3321b",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        448,
+        320
+      ],
+      "id": "eb8cf130-db77-4d97-9c34-7288eda6576c",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "You are a senior executive communications consultant.\n\nPerform the following reasoning steps:\n\n1. Identify sections that sound informal, repetitive, or verbose.\n2. Improve clarity and conciseness.\n3. Rewrite the report for a C-suite audience.\n4. Ensure the tone is strategic, professional, and action-oriented.\n5. Preserve all key business information.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        896,
+        -48
+      ],
+      "id": "747030e4-ff67-45e3-851f-43aadb02da78",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        896,
+        320
+      ],
+      "id": "664b2a20-6198-406f-9269-4afefd260c8a",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "Convert the following executive report into a 5-slide presentation outline.\n\nRequirements:\n- Each slide must have a title\n- Include concise bullet points\n- Keep slides executive-friendly\n- Preserve strategic business insights\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1312,
+        -48
+      ],
+      "id": "672cb6fe-1144-4573-b423-916d19788806",
+      "name": "AI Agent3"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        1312,
+        336
+      ],
+      "id": "4b589c4a-f6c2-4895-b183-1f15c521e368",
+      "name": "Google Gemini Chat Model3",
+      "credentials": {
+        "googlePalmApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "16ef67e7-41c5-49ff-8818-2c85182ead52",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "768b1fb923d145427da560cf6f0a92bab0a51c6f3f3b43e3e487401f042de9ab"
+  },
+  "id": "gQhCkAGXZQtAufw0",
+  "tags": []
+}
